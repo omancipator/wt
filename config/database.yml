@@ -21,7 +21,7 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
 
-development: &development
+development:
   <<: *default
   host: <%= ENV["WEIGHT_TRACKER_DEV_HOST"] %>
   database: <%= ENV["WEIGHT_TRACKER_DEV_DATABASE"] %>
@@ -83,7 +83,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *development
-  #database: weight-tracker_production
-  #username: weight-tracker
-  #password: <%= ENV['WEIGHT-TRACKER_DATABASE_PASSWORD'] %>
+  <<: *default
+  host: <%= ENV["WEIGHT_TRACKER_DEV_HOST"] %>
+  database: <%= ENV["WEIGHT_TRACKER_DEV_DATABASE"] %>
+  port: <%= ENV["WEIGHT_TRACKER_DEV_PORT"] %>
+  user: <%= ENV["WEIGHT_TRACKER_DEV_USER"] %>
+  password: <%= ENV["WEIGHT_TRACKER_DEV_PASSWORD"] %>
