@@ -21,7 +21,7 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
 
-development:
+development: &development
   <<: *default
   host: <%= ENV["WEIGHT_TRACKER_DEV_HOST"] %>
   database: <%= ENV["WEIGHT_TRACKER_DEV_DATABASE"] %>
