@@ -1,0 +1,33 @@
+<h1>Listing weight_posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Comment</th>
+      <th>Weight</th>
+      <th>Fat per</th>
+      <th>Bmi</th>
+      <th>Weight date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @weight_posts.each do |weight_post| %>
+      <tr>
+        <td><%= weight_post.comment %></td>
+        <td><%= weight_post.weight %></td>
+        <td><%= weight_post.fat_per %></td>
+        <td><%= weight_post.bmi %></td>
+        <td><%= weight_post.weight_date %></td>
+        <td><%= link_to 'Show', weight_post %></td>
+        <td><%= link_to 'Edit', edit_weight_post_path(weight_post) %></td>
+        <td><%= link_to 'Destroy', weight_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Weight post', new_weight_post_path %>

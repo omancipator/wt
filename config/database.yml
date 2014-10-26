@@ -28,12 +28,12 @@ development:
   port: <%= ENV["WEIGHT_TRACKER_DEV_PORT"] %>
   user: <%= ENV["WEIGHT_TRACKER_DEV_USER"] %>
   password: <%= ENV["WEIGHT_TRACKER_DEV_PASSWORD"] %>
-  
+
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: weight-tracker
+  #username: ruby-getting-started
 
   # The password associated with the postgres role (username).
   #password:
@@ -61,7 +61,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: weight-tracker_test
+  database: ruby-getting-started_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -84,8 +84,6 @@ test:
 #
 production:
   <<: *default
-  host: <%= ENV["WEIGHT_TRACKER_DEV_HOST"] %>
-  database: <%= ENV["WEIGHT_TRACKER_DEV_DATABASE"] %>
-  port: <%= ENV["WEIGHT_TRACKER_DEV_PORT"] %>
-  user: <%= ENV["WEIGHT_TRACKER_DEV_USER"] %>
-  password: <%= ENV["WEIGHT_TRACKER_DEV_PASSWORD"] %>
+  database: ruby-getting-started_production
+  username: ruby-getting-started
+  password: <%= ENV['RUBY-GETTING-STARTED_DATABASE_PASSWORD'] %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @weight_post.comment %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @weight_post.weight %>
+</p>
+
+<p>
+  <strong>Fat per:</strong>
+  <%= @weight_post.fat_per %>
+</p>
+
+<p>
+  <strong>Bmi:</strong>
+  <%= @weight_post.bmi %>
+</p>
+
+<p>
+  <strong>Weight date:</strong>
+  <%= @weight_post.weight_date %>
+</p>
+
+<%= link_to 'Edit', edit_weight_post_path(@weight_post) %> |
+<%= link_to 'Back', weight_posts_path %>
