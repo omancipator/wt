@@ -4,7 +4,7 @@ class WeightPostsController < ApplicationController
   # GET /weight_posts
   # GET /weight_posts.json
   def index
-    @weight_posts = WeightPost.all
+    @weight_posts = WeightPost.all.order(weight_date: :desc)
   end
 
   # GET /weight_posts/1
