@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="weightApp">
 <head>
-  <title>RubyGettingStarted</title>
+  <title>{{"hello " + "angular"}}</title>
+  
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
+  
   <%= csrf_meta_tags %>
+  
 </head>
-<body>
+<body ng-controller="PostsController as posts">
+ <h2> {{posts.name}} </h2>
 
 <%= yield %>
-
+  <%= javascript_include_tag 'http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js' %>
+  <%= javascript_include_tag 'application' %>
 </body>
 </html>
