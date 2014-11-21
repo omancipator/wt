@@ -1,10 +1,12 @@
 class WeightPostsController < ApplicationController
+  include ActionView::Helpers::NumberHelper
   before_action :set_weight_post, only: [:show, :edit, :update, :destroy]
 
   # GET /weight_posts
   # GET /weight_posts.json
   def index
     @weight_posts = WeightPost.all.order(weight_date: :desc)
+    @seven_day_avg = WeightPost.sevenDayAverage
   end
 
   # GET /weight_posts/1
