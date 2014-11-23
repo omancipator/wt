@@ -23,7 +23,24 @@ Rails.application.configure do
   config.serve_static_assets = false
 
   # Compress JavaScripts and CSS.
-  config.assets.js_compressor = :uglifier
+  #config.assets.js_compressor = :uglifier
+  config.assets.compress = true
+  
+  
+  class Transformer
+    def compress(string)
+      randomKey = Array.new(8){[*'0'..'9', *'a'..'z', *'A'..'Z'].sample}.join << ".js.map"
+      keyPath = File.join(Rails.root, "/public/assets/", randomKey)
+      
+      output, sourcemap = Uglifier.new(:output_filename => randomKey , :source_map_url => keyPath).compile_with_map(string)
+        
+      File.open(keyPath, "w"){ |somefile| somefile.puts sourcemap}
+      return output
+    end
+  end
+  
+  config.assets.js_compressor = Transformer.new
+  
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
