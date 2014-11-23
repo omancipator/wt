@@ -32,7 +32,7 @@ Rails.application.configure do
       randomKey = Array.new(8){[*'0'..'9', *'a'..'z', *'A'..'Z'].sample}.join << ".js.map"
       keyPath = File.join(Rails.root, "/public/assets/", randomKey)
       
-      output, sourcemap = Uglifier.new(:output_filename => randomKey , :source_map_url => keyPath).compile_with_map(string)
+      output, sourcemap = Uglifier.new(:output_filename => randomKey , :source_map_url => keyPath, :compress => {:angular => true}).compile_with_map(string)
         
       File.open(keyPath, "w"){ |somefile| somefile.puts sourcemap}
       return output
