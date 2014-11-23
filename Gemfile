@@ -9,7 +9,7 @@ gem 'unicorn'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '2.5.3'
+gem 'uglifier', :git => 'https://github.com/lautis/uglifier.git'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes

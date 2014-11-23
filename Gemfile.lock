@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/lautis/uglifier.git
+  revision: a26584a2733cbe759a06f1ea7b5e6f2bc02ddeb8
+  specs:
+    uglifier (2.5.3)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -113,9 +121,6 @@ GEM
       polyglot (>= 0.3.1)
     tzinfo (1.2.1)
       thread_safe (~> 0.1)
-    uglifier (2.5.3)
-      execjs (>= 0.3.0)
-      json (>= 1.8.0)
     unicorn (4.8.3)
       kgio (~> 2.6)
       rack
@@ -136,5 +141,5 @@ DEPENDENCIES
   rails_12factor
   sass-rails (~> 4.0.3)
   spring
-  uglifier (= 2.5.3)
+  uglifier!
   unicorn
