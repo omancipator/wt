@@ -31,8 +31,9 @@ Rails.application.configure do
     def compress(string)
       randomKey = Array.new(8){[*'0'..'9', *'a'..'z', *'A'..'Z'].sample}.join << ".js.map"
       keyPath = File.join(Rails.root, "/public/assets/", randomKey)
+      productionPath = File.join("https://aqueous-wave-7997.herokuapp.com", "/assets/", randomKey)
       
-      output, sourcemap = Uglifier.new(:output_filename => randomKey , :source_map_url => keyPath, :compress => {:angular => true}).compile_with_map(string)
+      output, sourcemap = Uglifier.new(:output_filename => randomKey , :source_map_url => productionPath, :compress => {:angular => true}).compile_with_map(string)
         
       File.open(keyPath, "w"){ |somefile| somefile.puts sourcemap}
       return output
