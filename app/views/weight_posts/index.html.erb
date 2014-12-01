@@ -24,7 +24,7 @@
         <td><%= weight_post.weight %></td>
         <td><%= weight_post.fat_per %></td>
         <td><%= weight_post.bmi %></td>
-        <td><%= weight_post.weight_date %></td>
+        <td><%= weight_post.weight_date.strftime("%a %m/%d/%Y") %></td>
         <td><%= link_to 'Show', weight_post %></td>
         <td><%= link_to 'Edit', edit_weight_post_path(weight_post) %></td>
         <td><%= link_to 'Destroy', weight_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
