@@ -1,10 +1,18 @@
 angular.module("angularRails", [
-  "ngRoute",
+  "ui.router",
   "templates"
-]).config(["$routeProvider","$locationProvider",function($routeProvider, $locationProvider){
-  $routeProvider.when("/",{
+]).config(["$stateProvider","$urlRouterProvider",function($stateProvider, $urlRouterProvider){
+  
+  $urlRouterProvider
+  .otherwise('/')
+  
+  
+  $stateProvider
+  .state("home",{
+    url: "/",
+//     template: "<h1>booya</h1>"
     templateUrl: "home.html",
     controller: "HomeCtrl"
   });
-  //$locationProvider.html5Mode(true);
+
 }]);
